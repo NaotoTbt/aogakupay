@@ -1,0 +1,42 @@
+body {
+  font-family: "Helvetica Neue", Arial, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8fafc;
+}
+
+.tab-nav {
+  display: flex;
+  border-bottom: 2px solid #0078d4;
+  background: #f4f8fc;
+  gap: 2px;
+}
+
+.tab {
+  display: inline-block;
+  padding: 14px 28px;
+  color: #0078d4;
+  text-decoration: none;
+  border: 1px solid #0078d4;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  background: #f4f8fc;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: -2px;
+}
+
+.tab:hover,
+.tab.active {
+  background: #0078d4;
+  color: #fff;
+}
+
+main {
+  padding: 32px 24px;
+  background: #fff;
+  border-radius: 0 0 12px 12px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
