@@ -39,9 +39,9 @@ body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI'
 .site-footer{border-top:1px solid rgba(0,0,0,0.06);padding:18px 0;margin-top:40px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center}
 @media(max-width:800px){
-  .hero-inner{flex-direction:column}
-  .global-nav{display:none}
-  .menu-toggle{display:block}
+  .global-nav{display:none;}
+  .global-nav.open{display:flex; flex-direction:column; background: #fff; position: absolute; top:60px; right:10px; z-index:100; gap:10px; box-shadow:0 4px 16px rgba(0,0,0,0.08);}
+  .menu-toggle{display:block;}
 }
 .members-intro {
   display: flex;
