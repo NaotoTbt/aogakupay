@@ -46,6 +46,6 @@ body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI'
 .members-intro {
   display: flex;
   justify-content: center;
-  gap: 100em;
+  gap: 20em;
   flex-wrap: wrap;
 }
