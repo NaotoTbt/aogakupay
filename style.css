@@ -40,7 +40,11 @@ body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI'
 .footer-inner{display:flex;justify-content:space-between;align-items:center}
 @media(max-width:800px){
   .global-nav{display:none;}
-  .global-nav.open{display:flex; flex-direction:column; background: #fff; position: absolute; top:60px; right:10px; z-index:100; gap:10px; box-shadow:0 4px 16px rgba(0,0,0,0.08);}
+  ..global-nav.open .nav-item {
+    color: #1b1b1f !important; /* 黒系など背景とコントラストがつく色に */
+    background: none;           /* 必要なら */
+  }
+  global-nav.open{display:flex; flex-direction:column; background: #fff; position: absolute; top:60px; right:10px; z-index:100; gap:10px; box-shadow:0 4px 16px rgba(0,0,0,0.08);}
   .menu-toggle{display:block;}
 }
 .members-intro {
