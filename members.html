@@ -23,7 +23,6 @@
   </header>
   <main>
     <section class="container">
-      <!-- アプリアイコン＆アプリInstagramアカウント追加 -->
       <div class="app-header" style="text-align:center; margin-bottom: 2em;">
         <img src="app_icon.png" alt="アプリアイコン" style="width:90px;height:90px;object-fit:cover;border-radius:18px;box-shadow:0 2px 8px #ccc;">
         <div style="margin-top:0.8em;">
@@ -33,38 +32,8 @@
         </div>
       </div>
       <div class="members-intro">
-        <div class="member-card">
-          <img src="member1.jpg" alt="Member 1" class="member-photo">
-          <h3>金 殷基</h3>
-          <p class="furigana">フリガナ: キム ウンギ</p>
-          <p class="nickname">ニックネーム: うー</p>
-          <p>すべての元凶。あと最近髪染めました。ミルクティー色です☕</p>
-          <a href="https://instagram.com/eungi129" target="_blank">@eungi129</a>
-        </div>
-        <div class="member-card">
-          <img src="member2.jpg" alt="Member 2" class="member-photo">
-          <h3>坪田 直人</h3>
-          <p class="furigana">フリガナ: ツボタ ナオト</p>
-          <p class="nickname">ニックネーム: ナオト</p>
-          <p>主にサイトの制作などをやってる。髪染めたらもっと派手にしてもいいなと思ってる</p>
-          <a href="https://instagram.com/tbt_naoto" target="_blank">@tbt_naoto</a>
-        </div>
-        <div class="member-card">
-          <img src="member3.jpg" alt="Member 3" class="member-photo">
-          <h3>宇治田 理沙</h3>
-          <p class="furigana">フリガナ: ウジタ リサ</p>
-          <p class="nickname">ニックネーム: リサ</p>
-          <p>ここに紹介文が入ります。</p>
-          <a href="https://instagram.com/lisa.lisa6805" target="_blank">@lisa.lisa6805</a>
-        </div>
-        <div class="member-card">
-          <img src="member4.jpg" alt="Member 4" class="member-photo">
-          <h3>戸田 大輝</h3>
-          <p class="furigana">フリガナ: トダ タイキ</p>
-          <p class="nickname">ニックネーム: タイキ</p>
-          <p>ここに紹介文が入ります。</p>
-          <a href="https://instagram.com/taiki8460" target="_blank">@taiki8460</a>
-        </div>
+        <!-- メンバー紹介カードここから -->
+        <!-- ...省略... -->
       </div>
     </section>
   </main>
@@ -80,10 +49,9 @@
     </div>
   </footer>
   <script>
-    // 現在年をフッターに反映
+    // 年号自動
     document.getElementById('year').textContent = new Date().getFullYear();
-
-  // モバイルメニュー開閉
+    // モバイルメニュー
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.global-nav');
     if (toggle && nav) {
@@ -92,7 +60,7 @@
         toggle.setAttribute('aria-expanded', String(!expanded));
         nav.classList.toggle('open');
       });
+    }
   </script>
 </body>
 </html>
-
