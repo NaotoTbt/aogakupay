@@ -83,14 +83,16 @@
     // 現在年をフッターに反映
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // モバイルメニュー簡易開閉
+  // モバイルメニュー開閉
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.global-nav');
-    toggle.addEventListener('click', () => {
-      const expanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('open');
-    });
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const expanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('open');
+      });
   </script>
 </body>
 </html>
+
