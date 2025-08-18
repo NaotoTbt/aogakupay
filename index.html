@@ -2,18 +2,105 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>アプリ紹介サイト - 現状・紹介</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="tab-nav">
-    <a href="index.html" class="tab active">現状・紹介</a>
-    <a href="usage.html" class="tab">使い方</a>
-    <a href="members.html" class="tab">メンバー紹介</a>
-  </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <!-- テキストロゴ。画像を使う場合は <img> に差し替えてください -->
+        <span class="logo-mark">A</span>
+        <span class="logo-text">AogakuPay</span>
+      </a>
+      <nav class="global-nav" aria-label="メインナビゲーション">
+        <a href="index.html" class="nav-item active">現状・紹介</a>
+        <a href="usage.html" class="nav-item">使い方</a>
+        <a href="members.html" class="nav-item">メンバー紹介</a>
+      </nav>
+      <button class="menu-toggle" aria-expanded="false" aria-label="メニュー">☰</button>
+    </div>
+  </header>
+
   <main>
-    <h1>アプリの現状・紹介</h1>
-    <p>ここにアプリの現状や開発状況、概要などを記載します。</p>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>学生向けキャッシュレス体験を、もっと身近に</h1>
+          <p class="lead">AogakuPay は学内で使える簡単・安全な決済アプリのプロトタイプです。現在の実装状況やこれからのロードマップをこちらでご紹介します。</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="usage.html">使い方を見る</a>
+            <a class="btn btn-outline" href="#features">特徴を見る</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <!-- プレースホルダーのカード風ビジュアル -->
+          <div class="mock-phone">
+            <div class="mock-screen">
+              <div class="balance">残高: ¥1,200</div>
+              <div class="pay-btn">支払う</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features container">
+      <h2 class="section-title">主な特徴</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>簡単な操作</h3>
+          <p>QRコード読み取りやワンタップでの支払いに対応。直感的なUIで誰でも使えます。</p>
+        </article>
+
+        <article class="card">
+          <h3>学内向けの設計</h3>
+          <p>学生証や購買データと連携し、学内の利用に最適化された機能を提供します。</p>
+        </article>
+
+        <article class="card">
+          <h3>安全性</h3>
+          <p>認証・暗号化など基本的なセキュリティ設計を取り入れています（開発中）。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="status container">
+      <h2 class="section-title">現在の開発状況</h2>
+      <p>プロトタイプ段階。UI/UX の整備、決済フローの実装、テストを順次進めています。Issue や PR でご協力いただける方は大歓迎です。</p>
+      <ul class="status-list">
+        <li>UI デザイン: 進行中</li>
+        <li>QR 決済連携: 設計中</li>
+        <li>ユーザーテスト: これから</li>
+      </ul>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <small>&copy; <span id="year"></span> AogakuPay</small>
+      </div>
+      <div class="footer-right">
+        <a href="#">利用規約</a>
+        <a href="#">プライバシー</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 現在年をフッターに反映
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // モバイルメニュー簡易開閉
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.global-nav');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
