@@ -1,2 +1,2 @@
 # aogakupay
-the website for aogakupay
+青山祭用電子決済アプリ青学ペイ紹介サイト
