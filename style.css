@@ -128,3 +128,36 @@ background-image: linear-gradient(90deg, rgba(49,103,69,0.04), rgba(49,103,69,0)
     max-height: 48vh;
   }
 }
+
+/* ========== ここから追記: メンバー紹介ページの上部ヘッダー強調 ========== */
+.app-header{
+  text-align: center;
+  margin: 1.5em 0 4em; /* 下方向の余白を広めにしてメンバー紹介と離す */
+}
+.app-header .app-icon{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.app-header .social-link{
+  display: inline-block;      /* 上下余白を効かせるため */
+  margin-top: 1em;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #3f729b;
+  text-decoration: none;
+}
+.app-header .social-link:hover{
+  text-decoration: underline;
+}
+@media (max-width: 480px){
+  .app-header{ margin: 1em 0 3em; }
+  .app-header .app-icon{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+  }
+  .app-header .social-link{ font-size: 1.2em; }
+}
