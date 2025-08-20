@@ -18,7 +18,7 @@
         <a href="usage.html" class="nav-item">使い方</a>
         <a href="members.html" class="nav-item active">メンバー紹介</a>
       </nav>
-      <button class="menu-toggle" aria-expanded="false" aria-label="メニュー">☰</button>
+      <!-- ハンバーガーメニュー削除 -->
     </div>
   </header>
   <main>
@@ -34,35 +34,27 @@
       <div class="members-intro">
         <div class="member-card">
           <img src="member1.jpg" alt="Member 1" class="member-photo">
-          <h3>金 殷基</h3>
-          <p class="furigana">フリガナ: キム ウンギ</p>
+          <h3>メンバー1</h3>
           <p class="nickname">ニックネーム: うー</p>
           <p>すべての元凶。あと最近髪染めました。ミルクティー色です☕</p>
-          <a href="https://instagram.com/eungi129" target="_blank">@eungi129</a>
         </div>
         <div class="member-card">
           <img src="member2.jpg" alt="Member 2" class="member-photo">
-          <h3>坪田 直人</h3>
-          <p class="furigana">フリガナ: ツボタ ナオト</p>
+          <h3>メンバー2</h3>
           <p class="nickname">ニックネーム: ナオト</p>
           <p>主にサイトの制作などをやってる。髪染めたらもっと派手にしてもいいなと思ってる</p>
-          <a href="https://instagram.com/tbt_naoto" target="_blank">@tbt_naoto</a>
         </div>
         <div class="member-card">
           <img src="member3.jpg" alt="Member 3" class="member-photo">
-          <h3>宇治田 理沙</h3>
-          <p class="furigana">フリガナ: ウジタ リサ</p>
+          <h3>メンバー3</h3>
           <p class="nickname">ニックネーム: リサ</p>
           <p>ここに紹介文が入ります。</p>
-          <a href="https://instagram.com/lisa.lisa6805" target="_blank">@lisa.lisa6805</a>
         </div>
         <div class="member-card">
           <img src="member4.jpg" alt="Member 4" class="member-photo">
-          <h3>戸田 大輝</h3>
-          <p class="furigana">フリガナ: トダ タイキ</p>
+          <h3>メンバー4</h3>
           <p class="nickname">ニックネーム: タイキ</p>
           <p>ここに紹介文が入ります。</p>
-          <a href="https://instagram.com/taiki8460" target="_blank">@taiki8460</a>
         </div>
       </div>
     </section>
@@ -81,18 +73,7 @@
   <script>
     // 現在年をフッターに反映
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // モバイルメニュー簡易開閉
-    const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.global-nav');
-    if (toggle && nav) {
-      toggle.addEventListener('click', () => {
-        const expanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!expanded));
-        nav.classList.toggle('open');
-      });
-    }
+    // ハンバーガーメニューのスクリプト削除
   </script>
 </body>
 </html>
-
