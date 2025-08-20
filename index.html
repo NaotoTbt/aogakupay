@@ -24,19 +24,24 @@
   </header>
 
   <main>
-    <section class="hero">
+    <!-- 背景を付与するためにクラス hero--paypayish-bg を追加 -->
+    <section class="hero hero--paypayish-bg">
       <div class="container hero-inner">
         <div class="hero-content">
           <h1>学生向けキャッシュレス体験を、もっと身近に</h1>
-          <p class="lead">青学ペイは学内で使える簡単・安全な決済アプリのプロトタイプです。現在の実装状況やこれからのロードマップをこちらでご紹介します。</p>
+          <p class="lead">青学ペイは学内で使える簡単・安全な決済アプリのプロトタイプです。現在の実装状況やこれからのロードマップをこちらでご紹[...]
+
           <div class="hero-ctas">
             <a class="btn btn-primary" href="usage.html">使い方を見る</a>
             <a class="btn btn-outline" href="#features">特徴を見る</a>
           </div>
         </div>
+
+        <!-- 右側のビジュアル（背景扱い）。上のスクショを assets/qr-hero.png として配置してください -->
         <div class="hero-visual" aria-hidden="true">
-          <!-- プレースホルダーのカード風ビジュアル -->
-          
+          <img class="hero-phone" src="assets/qr-hero.png" alt="">
+        </div>
+      </div>
     </section>
 
     <section id="features" class="features container">
