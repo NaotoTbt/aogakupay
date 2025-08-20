@@ -1,34 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600">
-  <defs>
-    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#2e7d5b"/>
-      <stop offset="0.6" stop-color="#2e7d5b" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#2e7d5b" stop-opacity="0.7"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="100%" cy="0%" r="100%">
-      <stop offset="0" stop-color="#2e7d5b" stop-opacity="0.25"/>
-      <stop offset="1" stop-color="#2e7d5b" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="blur24" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="24"/>
-    </filter>
-  </defs>
+/* ここから置き換え: ヒーローにPayPay風の背景ウェーブ＋スクショ配置（薄めver） */
+.hero--paypayish-bg{
+  position: relative;
+  overflow: hidden;
+  /* 左側テキストの可読性確保は残しつつ、かなり薄めに */
+  background-image: linear-gradient(90deg, rgba(49,103,69,0.015), rgba(49,103,69,0));
+}
 
-  <rect width="1600" height="600" fill="url(#glow)"/>
+/* 右上のウェーブ形状（SVG）は表示するが、主張を抑える */
+.hero--paypayish-bg::before{
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -160px;
+  width: min(1100px, 85vw);
+  height: min(520px, 60vw);
+  background: url("assets/hero-bg.svg") right top / cover no-repeat;
+  opacity: 0.45;              /* 1 → 0.45 に下げる */
+  pointer-events: none;
+  transform: rotate(0.0001deg);
+}
 
-  <g filter="url(#blur24)" opacity="0.95">
-    <path d="M1600,0 L1600,600 L880,600 C860,460 1210,300 900,120 C1160,80 1410,40 1600,0 Z" fill="url(#g1)"/>
-    <circle cx="1320" cy="120" r="180" fill="#2e7d5b" opacity="0.18"/>
-    <circle cx="1500" cy="380" r="120" fill="#2e7d5b" opacity="0.14"/>
-  </g>
+/* 右側スクショを前面に＆やや大きく */
+.hero-visual{
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 260px;
+  position: relative;         /* 前面表示のための積層コンテキスト */
+  z-index: 1;                 /* 背景ウェーブより上に */
+}
+.hero-phone{
+  width: clamp(240px, 36vw, 420px); /* 220→240、32vw→36vw、最大420pxに拡大 */
+  height: auto;
+  border-radius: 28px;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.18),
+    0 8px 16px rgba(0,0,0,0.10);
+  transform: rotate(-3deg);   /* -6deg → -3deg で見せ面積UP */
+}
 
-  <g opacity="0.08" fill="#000">
-    <rect x="1180" y="80" width="86" height="86" rx="12"/>
-    <rect x="1192" y="92" width="62" height="62" fill="#fff"/>
-    <rect x="1400" y="80" width="86" height="86" rx="12"/>
-    <rect x="1412" y="92" width="62" height="62" fill="#fff"/>
-    <rect x="1300" y="240" width="24" height="24" rx="4"/>
-    <rect x="1350" y="260" width="16" height="16" rx="3"/>
-    <rect x="1380" y="230" width="12" height="12" rx="3"/>
-  </g>
-</svg>
+/* モバイルでは従来どおりビジュアルを隠す（必要ならここを調整） */
+@media (max-width: 800px){
+  .hero{padding: 40px 0}
+  .hero-visual{display:none}
+  .hero--paypayish-bg::before{
+    right: -220px;
+    width: 120vw;
+    height: 60vw;
+    opacity: 0.35;           /* モバイル側も薄めに */
+  }
+}
