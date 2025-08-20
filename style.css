@@ -49,5 +49,8 @@ body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI'
 }
 /* メディアクエリ内のナビ・メニューボタン関連は削除 */
 @media(max-width:800px){
-  /* 必要なら他のレイアウト調整のみ残す*/
+  .global-nav .nav-item {
+    font-size: 13px;  /* 例: 通常16px前後→13pxに */
+    padding: 6px 6px; /* 文字がつぶれないよう余白も少し狭める */
+  }
 }
