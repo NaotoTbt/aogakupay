@@ -2,10 +2,10 @@
   --bg:#ffffff;
   --text:#1b1b1f;
   --muted:#6b7280;
-  --primary:#ff3b30;
-  --accent:#ff6b61;
+  --primary:#316745;
+  --accent:#316745;
   --card:#ffffff;
-  --glass:rgba(255,59,48,0.06);
+  --glass:rgba(49,103,69,0.06);
 }
 *{box-sizing:border-box}
 html,body{height:100%}
