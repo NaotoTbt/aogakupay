@@ -1,9 +1,8 @@
-/* new-style theme CSS for AogakuPay (new) */
 :root{
   --bg:#ffffff;
   --text:#1b1b1f;
   --muted:#6b7280;
-  --primary:#ff3b30; /* new theme primary */
+  --primary:#ff3b30;
   --accent:#ff6b61;
   --card:#ffffff;
   --glass:rgba(255,59,48,0.06);
@@ -17,10 +16,10 @@ body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI'
 .logo{display:flex;align-items:center;color:#fff;text-decoration:none}
 .logo-mark{display:inline-flex;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.12);align-items:center;justify-content:center;font-weight:700;margin-right:10px}
 .logo-text{font-weight:700}
-.global-nav{display:flex;gap:18px}
+.global-nav{display:flex !important;gap:18px}
 .global-nav .nav-item{color:rgba(255,255,255,0.9);text-decoration:none;padding:8px 10px;border-radius:8px}
 .global-nav .nav-item.active{background:rgba(255,255,255,0.12)}
-.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:20px}
+.menu-toggle{display:none !important;background:none;border:0;color:#fff;font-size:20px}
 .hero{padding:48px 0}
 .hero-inner{display:flex;gap:30px;align-items:center}
 .hero-content{flex:1}
@@ -38,22 +37,17 @@ body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI'
 .status{padding:36px 0}
 .site-footer{border-top:1px solid rgba(0,0,0,0.06);padding:18px 0;margin-top:40px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center}
-@media(max-width:800px){
-  .global-nav{display:none;}
-  ..global-nav.open .nav-item {
-    color: #1b1b1f !important; /* 黒系など背景とコントラストがつく色に */
-    background: none;           /* 必要なら */
-  }
-  global-nav.open{display:flex; flex-direction:column; background: #fff; position: absolute; top:60px; right:10px; z-index:100; gap:10px; box-shadow:0 4px 16px rgba(0,0,0,0.08);}
-  .menu-toggle{display:block;}
-}
 .members-intro {
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* ← 追加：上揃えで整う */
-  gap: 2.5em; /* 少し広げると余裕が出る */
+  align-items: flex-start;
+  gap: 2.5em;
   flex-wrap: wrap;
   margin-top: 2em;
   margin-bottom: 2em;
   padding: 0;
+}
+/* メディアクエリ内のナビ・メニューボタン関連は削除 */
+@media(max-width:800px){
+  /* 必要なら他のレイアウト調整のみ残す */
 }
