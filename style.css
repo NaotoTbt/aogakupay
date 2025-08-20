@@ -59,7 +59,7 @@ body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI'
   position: relative;
   overflow: hidden;
   /* 左側テキストの可読性確保は残しつつ、かなり薄めに */
-  background-image: linear-gradient(90deg, rgba(49,103,69,0.015), rgba(49,103,69,0));
+background-image: linear-gradient(90deg, rgba(49,103,69,0.04), rgba(49,103,69,0));
 }
 
 /* 右上のウェーブ形状（SVG）は表示するが、主張を抑える */
@@ -71,7 +71,7 @@ body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI'
   width: min(1100px, 85vw);
   height: min(520px, 60vw);
   background: url("assets/hero-bg.svg") right top / cover no-repeat;
-  opacity: 0.45;              /* 1 → 0.45 に下げる */
+  opacity: 1;              
   pointer-events: none;
   transform: rotate(0.0001deg);
 }
