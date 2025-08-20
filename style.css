@@ -155,8 +155,8 @@ background-image: linear-gradient(90deg, rgba(49,103,69,0.04), rgba(49,103,69,0)
 @media (max-width: 480px){
   .app-header{ margin: 1em 0 3em; }
   .app-header .app-icon{
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 20px;
   }
   .app-header .social-link{ font-size: 1.2em; }
