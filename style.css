@@ -54,3 +54,54 @@ body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI'
     padding: 6px 6px; /* 文字がつぶれないよう余白も少し狭める */
   }
 }
+/* ここから追加: ヒーローにPayPay風の背景ウェーブ＋スクショ配置 */
+.hero--paypayish-bg{
+  position: relative;
+  overflow: hidden;
+  /* 左側テキストの可読性を少し上げる薄いグラデーション */
+  background-image: linear-gradient(90deg, rgba(49,103,69,0.04), rgba(49,103,69,0));
+}
+
+/* 右上にウェーブ形状（SVG）を重ねる */
+.hero--paypayish-bg::before{
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -160px;
+  width: min(1100px, 85vw);
+  height: min(520px, 60vw);
+  background: url("assets/hero-bg.svg") right top / cover no-repeat;
+  opacity: 1;
+  pointer-events: none;
+  transform: rotate(0.0001deg); /* サブピクセル補正 */
+}
+
+/* 右側スクショ（上の画像を assets/qr-hero.png に保存して使用） */
+.hero-visual{
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 260px;
+}
+.hero-phone{
+  width: clamp(220px, 32vw, 360px);
+  height: auto;
+  border-radius: 28px;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.18),
+    0 8px 16px rgba(0,0,0,0.10);
+  transform: rotate(-6deg);
+}
+
+/* モバイルではビジュアルを隠して、背景の主張も弱める */
+@media (max-width: 800px){
+  .hero{padding: 40px 0}
+  .hero-visual{display:none}
+  .hero--paypayish-bg::before{
+    right: -220px;
+    width: 120vw;
+    height: 60vw;
+    opacity: 0.85;
+  }
+}
